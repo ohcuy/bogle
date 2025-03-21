@@ -41,21 +41,23 @@
             border-radius: 24px;
         }
         #toast {
-            visibility: hidden;
-            min-width: 200px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 10px;
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.5s, visibility 0.5s;
+        visibility: hidden;
+        min-width: 200px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px;
+        position: fixed;
+        bottom: 80px; /* 버튼보다 위로 */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.5s, visibility 0.5s;
+        z-index: 9999; /* 최상위 요소로 설정 */
         }
+
         .cta {
         width: 80%;
         padding: 15px;
@@ -71,7 +73,7 @@
         bottom: 20px; /* 화면 하단에서 20px 위 */
         left: 50%; /* 가운데 정렬 */
         transform: translateX(-50%); /* 정확한 중앙 정렬 */
-        z-index: 1000; /* 다른 요소 위에 표시 */
+        z-index: 500; /* 다른 요소 위에 표시 */
         }
 
         .cta:hover {
@@ -127,26 +129,30 @@
         }
     </script>
 
-    <script>
-        function copyText(element) {
-            const text = element.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                showToast();
-            }).catch(err => {
-                alert("복사 실패: " + err);
-            });
-        }
+<script>
+    function copyText(element) {
+        const text = element.textContent.trim(); // 텍스트 복사
+        navigator.clipboard.writeText(text).then(() => {
+            showToast(); // 토스트 표시
+        }).catch((err) => {
+            alert("복사 실패: " + err); // 복사 실패 시 알림
+        });
+    }
 
-        function showToast() {
-            const toast = document.getElementById("toast");
-            toast.style.visibility = "visible";
-            toast.style.opacity = "1";
+    function showToast() {
+        const toast = document.getElementById("toast");
+        toast.style.visibility = "visible";
+        toast.style.opacity = "1";
+        
+        setTimeout(() => {
+            toast.style.opacity = "0";
             setTimeout(() => {
-                toast.style.opacity = "0";
-                setTimeout(() => toast.style.visibility = "hidden", 500);
-            }, 1500);
-        }
-    </script>
+                toast.style.visibility = "hidden";
+            }, 500);
+        }, 1500);
+    }
+</script>
+
 
 </body>
 </html>
