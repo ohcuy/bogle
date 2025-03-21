@@ -123,14 +123,13 @@
 
     <div id="toast">📋 복사되었습니다!</div>
 
-    <button class="cta" onclick="openKakao()">카카오톡 실행</button>
+    <button class="cta" onclick="openiMessage()">iMessage 보내기 🎶</button>
 
     <script>
-        function openKakao() {
-            window.location.href = "kakaotalk://";
+        function openiMessage() {
+            window.location.href = "sms:";
         }
     </script>
-
 <script>
     function copyText(element) {
         const text = element.textContent.trim(); // 텍스트 복사
