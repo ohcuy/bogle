@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빨래 끝!🧺 다음 분을 위한 센스 있는 메시지 보내기💕</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 48px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .boxDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .template {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: background-color 0.2s;
+        }
+        .template:hover {
+            background-color: #e0e0e0;
+        }
+        .cta {
+            width: 80%;
+            padding: 15px;
+            background-color: blue;
+            color: #fff;
+            border-radius: 24px;
+        }
+        #toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .cta {
+        width: 80%;
+        padding: 15px;
+        background-color: #FFB0B0; /* 연한 핑크색 */
+        color: #fff;
+        border-radius: 24px;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        position: fixed; /* 화면에 고정 */
+        bottom: 20px; /* 화면 하단에서 20px 위 */
+        left: 50%; /* 가운데 정렬 */
+        transform: translateX(-50%); /* 정확한 중앙 정렬 */
+        z-index: 1000; /* 다른 요소 위에 표시 */
+        }
+
+        .cta:hover {
+            background-color: #FF9090; /* 약간 더 진한 핑크 */
+        }
+
+        .guideText {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>모두가 사용하는 <br/> 세탁실 사용 가이드라인 🧺</h2>
+    <p>현재 위치한 세탁실은 1층입니다.</p>
+    
+    <div class="boxDiv">
+        <h3>세탁기 템플릿 🫧</h3>
+        <div class="template" onclick="copyText(this)">
+            안녕하세요!
+            
+            1층 세탁기 사용이 완료되었습니다. 😊
+            세탁물은 꺼내서 공용 빨래바구니에 안전하게 넣어두었습니다! 💖
+
+            가져가실 때 빨래 바구니를 잘 확인하시고, 혹시 놓고 가는 물건은 없는지 꼭 체크해 주세요!
+            편안하고 즐거운 하루 되시길 바랍니다!
+            
+            항상 감사합니다! 🌟
+             </div> 
+    </div>
+
+    <div class="boxDiv">
+        <h3>건조기 템플릿 💨</h3>
+        <div class="template" onclick="copyText(this)">
+            안녕하세요!
+ 
+            1층 건조기 사용이 완료되었습니다. 😊
+            세탁물은 꺼내서 공용 빨래바구니에 안전하게 넣어두었습니다! 💖
+
+            가져가실 때 빨래 바구니를 잘 확인하시고, 혹시 놓고 가는 물건은 없는지 꼭 체크해 주세요!
+            편안하고 즐거운 하루 되시길 바랍니다!
+             
+            항상 감사합니다! 🌟
+        </div> 
+    </div>
+
+    <div id="toast">📋 복사되었습니다!</div>
+
+    <button class="cta" onclick="openKakao()">카카오톡 실행</button>
+
+    <script>
+        function openKakao() {
+            window.location.href = "kakaotalk://";
+        }
+    </script>
+
+    <script>
+        function copyText(element) {
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                alert("복사 실패: " + err);
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.style.visibility = "visible";
+            toast.style.opacity = "1";
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                setTimeout(() => toast.style.visibility = "hidden", 500);
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
