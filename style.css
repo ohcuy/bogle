@@ -26,13 +26,7 @@ body {
 .template:hover {
     background-color: #e0e0e0;
 }
-.cta {
-    width: 80%;
-    padding: 15px;
-    background-color: blue;
-    color: #fff;
-    border-radius: 24px;
-}
+
 #toast {
 visibility: hidden;
 min-width: 200px;
@@ -77,5 +71,5 @@ z-index: 500; /* 다른 요소 위에 표시 */
     color: #333;
 }
 .logo_image {
-    width: 100%;
+    width: 50%;
 }
