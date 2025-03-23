@@ -34,11 +34,6 @@
 
     <button class="cta" onclick="openiMessage()">iMessage 보내기 🎶</button>
 
-    <script>
-        function openiMessage() {
-            window.location.href = "sms:";
-        }
-    </script>
 <script>
     function copyText(element) {
         const text = element.textContent.trim(); // 텍스트 복사
@@ -61,8 +56,10 @@
             }, 500);
         }, 1500);
     }
+
+    function openiMessage() {
+            window.location.href = "sms:";
+    }
 </script>
-
-
 </body>
 </html>
