@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 24px;
+    padding-left: 48px;
+    padding-right: 48px;
+    text-align: center;
+    align-items: center;
+}
+
+.boxDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.template {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+}
+.template:hover {
+    background-color: #e0e0e0;
+}
+.cta {
+    width: 80%;
+    padding: 15px;
+    background-color: blue;
+    color: #fff;
+    border-radius: 24px;
+}
+#toast {
+visibility: hidden;
+min-width: 200px;
+background-color: #333;
+color: #fff;
+text-align: center;
+border-radius: 8px;
+padding: 10px;
+position: fixed;
+bottom: 80px; /* 버튼보다 위로 */
+left: 50%;
+transform: translateX(-50%);
+font-size: 14px;
+opacity: 0;
+transition: opacity 0.5s, visibility 0.5s;
+z-index: 9999; /* 최상위 요소로 설정 */
+}
+
+.cta {
+width: 80%;
+padding: 15px;
+background-color: #FFB0B0; /* 연한 핑크색 */
+color: #fff;
+border-radius: 24px;
+border: none;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.2s;
+position: fixed; /* 화면에 고정 */
+bottom: 20px; /* 화면 하단에서 20px 위 */
+left: 50%; /* 가운데 정렬 */
+transform: translateX(-50%); /* 정확한 중앙 정렬 */
+z-index: 500; /* 다른 요소 위에 표시 */
+}
+
+.cta:hover {
+    background-color: #FF9090; /* 약간 더 진한 핑크 */
+}
+
+.guideText {
+    color: #333;
+}
+.logo_image {
+    width: 100%;
+}
