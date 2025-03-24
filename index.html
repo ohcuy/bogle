@@ -15,44 +15,45 @@
     <p>템플릿을 복사해서</br>이전 사용자에게 알림을 보내세요 ☺️</p>
     
     <div class="boxDiv">
-        <h3>세탁기 템플릿 🫧</h3>
+        <h3>세탁기 템플릿 복사하기🫧</h3>
         <div class="template" onclick="copyText(this)">안녕하세요! 1층 세탁기 사용이 완료되어, 세탁물을 공용 빨래바구니에 넣어두었습니다. 😊</div>
 
     <div class="boxDiv">
-        <h3>건조기 템플릿 💨</h3>
+        <h3>건조기 템플릿 복사하기💨</h3>
         <div class="template" onclick="copyText(this)">안녕하세요! 1층 건조기 사용이 완료되어, 세탁물을 공용 빨래바구니에 넣어두었습니다. 😊</div> 
     </div>
 
     <div id="toast">📋 복사되었습니다!</div>
 
-    <button class="cta" onclick="openiMessage()">iMessage 보내기 🎶</button>
-
-<script>
-    function copyText(element) {
-        const text = element.textContent.trim(); // 텍스트 복사
-        navigator.clipboard.writeText(text).then(() => {
-            showToast(); // 토스트 표시
-        }).catch((err) => {
-            alert("복사 실패: " + err); // 복사 실패 시 알림
-        });
-    }
-
-    function showToast() {
-        const toast = document.getElementById("toast");
-        toast.style.visibility = "visible";
-        toast.style.opacity = "1";
-        
-        setTimeout(() => {
-            toast.style.opacity = "0";
+    <script>
+        function copyText(element) {
+            const text = element.textContent.trim(); // 선택한 텍스트 가져오기
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(); // 복사 토스트 표시
+                openiMessage(text); // iMessage 실행
+            }).catch((err) => {
+                alert("복사 실패: " + err);
+            });
+        }
+    
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.style.visibility = "visible";
+            toast.style.opacity = "1";
+            
             setTimeout(() => {
-                toast.style.visibility = "hidden";
-            }, 500);
-        }, 1500);
-    }
-
-    function openiMessage() {
-            window.location.href = "sms:";
-    }
-</script>
+                toast.style.opacity = "0";
+                setTimeout(() => {
+                    toast.style.visibility = "hidden";
+                }, 500);
+            }, 1500);
+        }
+    
+        function openiMessage(text) {
+            const encodedText = encodeURIComponent(text); // URL 인코딩
+            window.location.href = `sms:&body=${encodedText}`;
+        }
+    </script>
+    
 </body>
 </html>
