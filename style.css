@@ -16,13 +16,13 @@ body {
 
 .template {
     padding: 15px;
-    margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
     background-color: #f9f9f9;
     transition: background-color 0.2s;
 }
+
 .template:hover {
     background-color: #e0e0e0;
 }
@@ -70,6 +70,7 @@ z-index: 500; /* 다른 요소 위에 표시 */
 .guideText {
     color: #333;
 }
+
 .logo_image {
     width: 50%;
 }
