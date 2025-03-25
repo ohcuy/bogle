@@ -7,29 +7,45 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <img src="./title_image.png" alt="로고 이미지" class="logo_image" />
-    <h4>모두가 사용하는 세탁실 사용 가이드라인 🧺</h4>
-
-    <p>현재 위치한 세탁실은 1층입니다.</p>
-
-    <p>템플릿을 사용해서</br>이전 사용자에게 메시지를 보내세요 ☺️</p>
+    <div class="fullDiv">
+        <img src="./title_image.png" alt="로고 이미지" class="logo_image" />
+        <div class="contentDiv">
+            <div class="pageTitleDiv">
+                <p class="pageTitleTop">완료된 빨래가 있다면<br/>다른 러너에게 알려보세요😉</p>
+                <p class="pageTitleBottom">버튼 클릭으로 간단하게 메시지를 보낼 수 있어요!</p>
+            </div>
     
-    <div class="boxDiv">
-        <h3>세탁기 메시지 보내기 🫧</h3>
-        <div class="template" onclick="copyText(this)">안녕하세요! 1층 세탁기 사용이 완료되어, 세탁물을 공용 빨래바구니에 넣어두었습니다. 😊</div>
+            <div class="boxContainer">
+                <div class="boxDiv">
+                    <p class="boxTitle">세탁기🫧</p>
+                    <div class="templateDiv">
+                        <div class="templatePreview">
+                            <p class="templateText">안녕하세요! <br/>4층 세탁기 사용이 완료되어, <br/>세탁물을 빨래 바구니에 옮겨두었습니다😊</p>
+                        </div>
+                        <button class="copyButton" onclick="copyText(this)">메시지 보내기💌</button>
+                    </div>
+                </div>
+                <div class="boxDiv">
+                    <p class="boxTitle">건조기💨</p>
+                    <div class="templateDiv">
+                        <div class="templatePreview">
+                            <p class="templateText">안녕하세요! <br/>4층 건조기 사용이 완료되어, <br/>세탁물을 빨래 바구니에 옮겨두었습니다😊</p>
+                        </div>
+                        <button class="copyButton" onclick="copyText(this)">메시지 보내기💌</button>
+                    </div>
+                </div>
+            </div>
+            <p class="bottomGuide">💕서로 배려하는 즐거운 세탁실 사용🧺</p>
+        </div>
 
-    <div class="boxDiv">
-        <h3>건조기 메시지 보내기 🌬️</h3>
-        <div class="template" onclick="copyText(this)">안녕하세요! 1층 건조기 사용이 완료되어, 세탁물을 공용 빨래바구니에 넣어두었습니다. 😊</div> 
     </div>
-
-    <p>메시지 박스를 누르면 iMessage로 이동합니다 ✉️</p>
 
     <div id="toast">📋 복사되었습니다!</div>
 
     <script>
         function copyText(element) {
-            const text = element.textContent.trim(); // 선택한 텍스트 가져오기
+            const templateDiv = element.closest('.templateDiv'); // 버튼과 같은 templateDiv 찾기
+            const text = templateDiv.querySelector('.templateText').textContent.trim(); // templateText 내용 가져오기
             navigator.clipboard.writeText(text).then(() => {
                 showToast(); // 복사 토스트 표시
                 openiMessage(text); // iMessage 실행

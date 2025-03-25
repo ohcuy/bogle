@@ -1,30 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    padding-top: 24px;
-    padding-left: 48px;
-    padding-right: 48px;
-    text-align: center;
-    align-items: center;
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
     height: 100vh;
-}
-
-.boxDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.template {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    transition: background-color 0.2s;
-}
-
-.template:hover {
-    background-color: #e0e0e0;
 }
 
 #toast {
@@ -45,32 +29,150 @@ transition: opacity 0.5s, visibility 0.5s;
 z-index: 9999; /* 최상위 요소로 설정 */
 }
 
-.cta {
-width: 80%;
-padding: 15px;
-background-color: #FFB0B0; /* 연한 핑크색 */
-color: #fff;
-border-radius: 24px;
-border: none;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
-transition: background-color 0.2s;
-position: fixed; /* 화면에 고정 */
-bottom: 20px; /* 화면 하단에서 20px 위 */
-left: 50%; /* 가운데 정렬 */
-transform: translateX(-50%); /* 정확한 중앙 정렬 */
-z-index: 500; /* 다른 요소 위에 표시 */
-}
-
-.cta:hover {
-    background-color: #FF9090; /* 약간 더 진한 핑크 */
-}
-
-.guideText {
-    color: #333;
-}
-
 .logo_image {
-    width: 50%;
+    width: 124px;
+    height: 52px;
+}
+
+.contentDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.boxDiv {
+    display: flex;
+    width: 345px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.fullDiv {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.pageTitleDiv {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.pageTitleTop {
+    color: #343434;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+.pageTitlebottom {
+    color: #343434;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.boxTitle {
+    align-self: stretch;
+    color: #343434;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bottomGuide {
+    align-self: stretch;
+    color: #343434;
+    text-align: center;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.boxContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+
+.boxDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.templatePreview {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid #D4D4D4;
+}
+
+.templateDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.templateText {
+    color: #4C4C4C;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 21.6px */
+    letter-spacing: -0.36px;
+}
+
+.copyButton {
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #0090FF;
+    color: #FFF;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.copyButton:hover {
+    background: #007ACC;
+    cursor: pointer;
 }
