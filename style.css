@@ -162,7 +162,7 @@ z-index: 9999; /* 최상위 요소로 설정 */
     gap: 10px;
     align-self: stretch;
     border-radius: 8px;
-    background: #0090FF;
+    background: #428DFF;
     color: #FFF;
     font-family: "Apple SD Gothic Neo";
     font-size: 18px;
@@ -173,6 +173,6 @@ z-index: 9999; /* 최상위 요소로 설정 */
 }
 
 .copyButton:hover {
-    background: #007ACC;
+    background: #3571CC;
     cursor: pointer;
 }
